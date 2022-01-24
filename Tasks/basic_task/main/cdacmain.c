@@ -28,7 +28,7 @@ void app_main()
     {
         printf("TaskLog1 Created\n");
      }
-     result=xTaskCreate(TaskLog2,"TaskLog2",1024,NULL,8,&xHandleTaskLog_B);
+     result=xTaskCreate(TaskLog2,"TaskLog2",1024,NULL,2,&xHandleTaskLog_B);
     if(result==pdPASS)
     {
         printf("TaskLog2 Created\n");
