@@ -8,7 +8,6 @@ void SensorTask(void *pv)
 {
    while(1)
    {
-      printf("Sensor Task\n");
       vTaskDelay(1000/portTICK_PERIOD_MS);
     }
 }
@@ -28,7 +27,7 @@ void AlarmTask(void *pv)
 
 void app_main()
 {
-    xTaskCreate(SensorTask,"Sensortask",2048,NULL,5,NULL);
-    xTaskCreate(AlarmTask,"Alarmtask",2048,NULL,5,NULL);
+    xTaskCreate(SensorTask,"Sensortask",1500,NULL,5,NULL);
+    xTaskCreate(AlarmTask,"Alarmtask",1500,NULL,5,NULL);
     printf("Hello world\n");
 }
