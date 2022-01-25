@@ -37,7 +37,13 @@ void PressureTask(void *pv)
 
 void CalibrationTask(void *pv)
 {
-    printf("Calibration Task\n");
+    uint32_t res;
+    while(1)
+   {
+         printf("Calibration Task\n");
+         res=xEventGroupWaitBits(sensor_eg,all_bits,pdTRUE,pdTRUE,pdMS_TO_TICKS(5000));
+         printf("Result:%d\n",res);
+       }
     vTaskDelete(NULL);
 }
 
